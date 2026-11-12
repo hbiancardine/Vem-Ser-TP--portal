@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/vem-ser-tp-design-system-4017e014-b5f2-46ca-ac3d-b8fdec486b8c/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/vem-ser-tp-design-system-4017e014-b5f2-46ca-ac3d-b8fdec486b8c/tokens/colors.css">
+<link rel="stylesheet" href="_ds/vem-ser-tp-design-system-4017e014-b5f2-46ca-ac3d-b8fdec486b8c/tokens/typography.css">
+<link rel="stylesheet" href="_ds/vem-ser-tp-design-system-4017e014-b5f2-46ca-ac3d-b8fdec486b8c/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/vem-ser-tp-design-system-4017e014-b5f2-46ca-ac3d-b8fdec486b8c/styles.css">
+<script src="_ds/vem-ser-tp-design-system-4017e014-b5f2-46ca-ac3d-b8fdec486b8c/_ds_bundle.js"></script>
+<script src="./image-slot.js"></script>
+<style>
+body{margin:0;background:#F7F7F7;font-family:'Noto Sans',sans-serif;}
+*{box-sizing:border-box;}
+a{color:#FF0182;text-decoration:none;}
+a:hover{color:#E40276;}
+input::placeholder{color:#9A9A9A;}
+</style>
+</helmet>
+<div style="min-height:100vh;display:flex;flex-direction:column;background:#F7F7F7;font-family:'Noto Sans',sans-serif;color:#333;">
+
+  <header style="background:#fff;box-shadow:0 1px 4px rgba(0,0,0,0.08);position:relative;z-index:2;">
+    <div style="max-width:1200px;margin:0 auto;padding:12px 20px;min-height:70px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 24px;">
+      <div onClick="{{ goLanding }}" style="cursor:pointer;display:flex;align-items:center;">
+        <x-import component-from-global-scope="VemSerTPDesignSystem_4017e0.Logo" height="36" hint-size="34px,36px"></x-import>
+      </div>
+      <nav style="display:flex;flex-wrap:wrap;justify-content:center;gap:8px 48px;flex:1 1 auto;order:2;">
+        <a href="#" style="color:#333;font-size:16px;font-weight:500;">Quem somos</a>
+        <a href="#" style="color:#333;font-size:16px;font-weight:500;">Benefícios</a>
+        <a href="#" style="color:#333;font-size:16px;font-weight:500;">Desenvolvimento</a>
+        <a href="#" style="color:#333;font-size:16px;font-weight:500;">Dúvidas frequentes</a>
+      </nav>
+      <div style="order:3;display:flex;">
+        <sc-if value="{{ isLanding }}" hint-placeholder-val="{{ true }}">
+          <button style="background:#000;color:#fff;border:none;border-radius:100px;height:36px;padding:0 30px;font-family:inherit;font-size:16px;font-weight:700;cursor:pointer;">Entrar</button>
+        </sc-if>
+        <sc-if value="{{ notLanding }}" hint-placeholder-val="{{ false }}">
+          <button style="background:#fff;color:#FF0182;border:1.5px solid #FF0182;border-radius:100px;height:30px;padding:0 18px;font-family:inherit;font-size:15px;font-weight:600;cursor:pointer;">PT-BR</button>
+        </sc-if>
+      </div>
+    </div>
+  </header>
+
+  <main style="flex:1 0 auto;">
+
+    <sc-if value="{{ isLanding }}" hint-placeholder-val="{{ true }}">
+      <div data-screen-label="01 Home" style="display:flex;flex-direction:column;">
+        <section style="position:relative;overflow:hidden;min-height:500px;display:flex;align-items:center;">
+          <div style="position:absolute;inset:0;background:#8a7d74;">
+            <img src="uploads/banner-new.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;">
+            <div style="position:absolute;inset:0;background:linear-gradient(90deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0) 55%);"></div>
+          </div>
+          <div style="position:relative;width:100%;max-width:1200px;margin:0 auto;padding:48px 20px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:32px;pointer-events:none;">
+            <div style="flex:1 1 380px;min-width:0;display:flex;flex-direction:column;align-items:flex-start;gap:16px;color:#fff;pointer-events:auto;">
+              <span style="background:#FF0182;color:#fff;border-radius:100px;padding:4px 16px;font-size:14px;font-weight:500;">VAGA EM DESTAQUE</span>
+              <h1 style="margin:0;font-size:34px;line-height:1.2;font-weight:700;color:#fff;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-shadow:0 1px 6px rgba(0,0,0,0.35);">Agente de Atendimento - Backoffice produtos e serviços</h1>
+              <div style="display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;font-size:15px;color:rgba(255,255,255,0.85);margin-top:12px;">
+                <span style="display:flex;align-items:center;gap:5px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="7" width="18" height="13" rx="2"></rect><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"></path></svg>BKO</span>
+                <span style="display:flex;align-items:center;gap:5px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.5"></circle></svg>Presencial - SÃO PAULO</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:10px;">
+                <button style="background:#FF0182;color:#fff;border:none;border-radius:100px;height:40px;padding:0 24px;font-family:inherit;font-size:16px;font-weight:600;cursor:pointer;">VER VAGA</button>
+                <span style="font-size:14px;font-weight:600;color:rgba(255,255,255,0.75);">#VemSerTP</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:34px;margin-top:22px;">
+                <button aria-label="Anterior" style="width:36px;height:36px;border-radius:50%;border:none;background:rgba(40,40,40,0.7);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M15 6l-6 6 6 6"></path></svg></button>
+                <div style="display:flex;align-items:center;gap:6px;">
+                  <span style="width:8px;height:6px;border-radius:3px;background:rgba(80,80,80,0.6);"></span>
+                  <span style="width:30px;height:6px;border-radius:3px;background:#FF0182;"></span>
+                  <span style="width:8px;height:6px;border-radius:3px;background:rgba(80,80,80,0.6);"></span>
+                  <span style="width:8px;height:6px;border-radius:3px;background:rgba(80,80,80,0.6);"></span>
+                </div>
+                <button aria-label="Próximo" style="width:36px;height:36px;border-radius:50%;border:none;background:rgba(40,40,40,0.7);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M9 6l6 6-6 6"></path></svg></button>
+              </div>
+            </div>
+
+            <div style="flex:0 1 400px;width:400px;max-width:100%;background:rgba(255,255,255,0.88);border-radius:16px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.12);pointer-events:auto;">
+              <div style="background:rgba(244,222,234,0.9);padding:12px 16px;text-align:center;font-size:15px;color:#333;">TEMOS VAGAS PERFEITAS PARA O SEU PERFIL</div>
+              <div style="padding:16px 35px 26px;display:flex;flex-direction:column;align-items:stretch;gap:16px;">
+                <div style="text-align:center;font-size:16px;color:#333;">Faça login ou cadastre-se</div>
+                <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;">
+                  <button onClick="{{ setEmailMode }}" style="height:38px;border-radius:100px;border:{{ emailTabBorder }};background:{{ emailTabBg }};color:{{ emailTabColor }};font-family:inherit;font-size:14px;font-weight:500;display:flex;align-items:center;justify-content:center;gap:10px;cursor:pointer;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg>E-mail</button>
+                  <button onClick="{{ setSmsMode }}" style="height:38px;border-radius:100px;border:{{ smsTabBorder }};background:{{ smsTabBg }};color:{{ smsTabColor }};font-family:inherit;font-size:14px;font-weight:500;display:flex;align-items:center;justify-content:center;gap:10px;cursor:pointer;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5h16v11H9l-5 4z"></path></svg>SMS</button>
+                </div>
+                <input value="{{ contact }}" onChange="{{ onContact }}" placeholder="{{ contactPlaceholder }}" style="height:44px;border-radius:100px;border:1px solid #B2B2B2;background:transparent;text-align:center;font-family:inherit;font-size:13px;color:#333;outline:none;width:100%;">
+                <button onClick="{{ openTerms }}" style="height:46px;border-radius:100px;border:none;background:#000;color:#fff;font-family:inherit;font-size:16px;font-weight:700;cursor:pointer;margin-top:8px;">Cadastre-se</button>
+                <div style="display:flex;align-items:center;gap:14px;margin-top:14px;">
+                  <span style="flex:1;height:1px;background:#D9D9D9;"></span>
+                  <span style="font-size:11px;font-weight:500;color:#898989;">OU CONTINUE COM</span>
+                  <span style="flex:1;height:1px;background:#D9D9D9;"></span>
+                </div>
+                <div style="display:flex;justify-content:center;margin-top:8px;">
+                  <button style="height:40px;border-radius:100px;border:1px solid #D9D9D9;background:#fff;padding:0 12px;display:flex;align-items:center;gap:10px;font-family:inherit;font-size:14px;color:#333;cursor:pointer;">
+                    <svg width="18" height="18" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"></path><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"></path><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"></path><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"></path></svg>
+                    Continuar com o Google
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section style="width:100%;max-width:1200px;margin:0 auto;padding:56px 20px 64px;">
+          <h2 style="margin:0;max-width:850px;font-size:clamp(32px,4.5vw,50px);line-height:1.25;font-weight:400;color:#000;">Temos vagas para todo tipo de perfil. Qual o seu?</h2>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;border-bottom:1px solid #e5e7eb;margin:40px 0 32px;">
+            <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="4">
+              <button onClick="{{ t.onClick }}" style="padding:0 12px 12px;margin-bottom:-1px;font-family:inherit;font-size:14px;font-weight:500;text-transform:uppercase;letter-spacing:.025em;border:0;border-bottom:{{ t.underline }};background:none;color:{{ t.color }};cursor:pointer;white-space:nowrap;">{{ t.label }}</button>
+            </sc-for>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:20px;">
+            <sc-for list="{{ vagas }}" as="c" hint-placeholder-count="3">
+              <div style="background:#fff;border-radius:12px;box-shadow:0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -2px rgba(0,0,0,.1);padding:20px;display:flex;flex-direction:column;gap:12px;border:1px solid #f3f4f6;transition:box-shadow .2s;" style-hover="box-shadow:0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -4px rgba(0,0,0,.1)">
+                <h3 style="margin:0;color:#000;font-size:15px;font-weight:400;line-height:1.375;">{{ c.nome }}</h3>
+                <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+                  <span style="border:1px solid {{ c.modColor }};color:{{ c.modColor }};font-size:11px;padding:2px 12px;border-radius:9999px;white-space:nowrap;">{{ c.modalidade }}</span>
+                  <sc-if value="{{ c.isPcd }}" hint-placeholder-val="{{ false }}"><span style="background:#f5e9f6;color:#7a2180;font-size:11px;font-weight:500;padding:3px 10px;border-radius:9999px;white-space:nowrap;">Exclusiva PcD</span></sc-if>
+                  <span style="display:flex;align-items:center;gap:4px;font-size:11px;color:#7a2180;text-transform:uppercase;">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg>{{ c.local }}
+                  </span>
+                </div>
+                <p style="margin:0;color:#4b5563;font-size:12px;line-height:1.625;flex:1;">{{ c.descricao }}</p>
+                <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:auto;padding-top:8px;border-top:1px solid #f3f4f6;">
+                  <span style="color:#ff0082;font-size:11px;display:flex;align-items:center;gap:4px;min-width:0;">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path><rect width="20" height="14" x="2" y="6" rx="2"></rect></svg>
+                    <span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">{{ c.escala }}</span>
+                  </span>
+                  <button onClick="{{ openTerms }}" style="font-family:inherit;font-size:12px;color:#fff;background:#ff0082;border:0;padding:6px 16px;border-radius:9999px;cursor:pointer;flex-shrink:0;" style-hover="background:#cc006a">Ver vaga</button>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+        </section>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ isTerms }}" hint-placeholder-val="{{ false }}">
+      <div data-screen-label="02 Termos de Privacidade" style="min-height:760px;"></div>
+      <div style="position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:10;display:flex;align-items:center;justify-content:center;padding:28px 16px;">
+        <div style="width:800px;max-width:100%;max-height:100%;background:#fff;border-radius:16px;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.2);">
+          <div style="padding:18px 20px;text-align:center;font-size:24px;font-weight:500;color:#222;">Termos de Privacidade</div>
+          <div style="flex:1 1 auto;overflow-y:auto;padding:40px clamp(16px,13%,110px) 40px;color:#000;font-family:Calibri,'Noto Sans',sans-serif;">
+            <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:16px;">
+              <span style="font-size:11px;">Aviso de Privacidade Candidatos v4</span>
+              <x-import component-from-global-scope="VemSerTPDesignSystem_4017e0.Logo" height="30" hint-size="28px,30px"></x-import>
+            </div>
+            <p style="margin:24px 6px 0;font-size:11px;font-weight:700;">Última atualização: outubro de 2025</p>
+            <h2 style="margin:48px 6px 0;font-size:30px;font-weight:400;color:#3E6FC9;line-height:1.2;">Aviso de Privacidade para Candidatos TP</h2>
+            <p style="margin:28px 6px 0;font-size:12.5px;line-height:1.5;text-align:justify;">Na Teleperformance (TP), estamos empenhados em respeitar a sua privacidade e proteger as suas informações pessoais. A TP deve processar suas informações pessoais para garantir a conformidade com os requisitos legais para sua candidatura. Nosso Aviso de Privacidade fornece informações sobre como a TP processa suas informações pessoais em nossas operações globais. Atualizamos este documento regularmente. <strong>Por favor, leia com cuidado</strong>.</p>
+            <h3 style="margin:20px 4px 12px;font-size:18px;font-weight:400;color:#2F5597;">Principais seções do nosso Aviso de Privacidade</h3>
+            <sc-for list="{{ toc }}" as="item" hint-placeholder-count="8">
+              <div style="display:flex;align-items:baseline;gap:4px;margin:0 6px;padding:4px 0;font-size:11px;">
+                <span>{{ item.t }}</span>
+                <span style="flex:1;border-bottom:1px dotted #000;transform:translateY(-3px);"></span>
+                <span>{{ item.p }}</span>
+              </div>
+            </sc-for>
+            <h3 style="margin:64px 0 4px;font-size:18px;font-weight:400;color:#2F5597;">Nossas regras corporativas vinculativas</h3>
+            <p style="margin:0;font-size:12.5px;line-height:1.5;text-align:justify;">A TP se orgulha de ser uma das poucas empresas a ter obtido a aprovação formal das Autoridades de Proteção de Dados da União Europeia (UE) sob o GDPR (Regulamento Geral Europeu de Proteção de Dados)</p>
+          </div>
+          <div style="border-top:1px solid #EBEBEB;padding:16px 17px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;">
+            <span style="font-size:16px;color:#222;">Você só poderá continuar após aceitar o termo.</span>
+            <button onClick="{{ acceptTerms }}" style="background:#6C7FE0;color:#fff;border:none;border-radius:4px;height:38px;padding:0 13px;font-family:inherit;font-size:16px;font-weight:500;cursor:pointer;">Aceitar termos de privacidade</button>
+          </div>
+        </div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ isStep }}" hint-placeholder-val="{{ false }}">
+      <div data-screen-label="{{ stepLabel }}" style="width:100%;max-width:828px;margin:0 auto;padding:44px 20px 48px;display:flex;flex-direction:column;gap:24px;">
+        <div style="display:flex;flex-direction:column;gap:6px;">
+          <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;">
+            <sc-for list="{{ bars }}" as="b" hint-placeholder-count="3">
+              <span style="height:8px;border-radius:4px;background:{{ b.bg }};"></span>
+            </sc-for>
+          </div>
+          <span style="font-size:14px;font-weight:500;color:#666;">Etapa {{ step }} de 3</span>
+        </div>
+
+        <sc-if value="{{ isStep1 }}" hint-placeholder-val="{{ false }}">
+          <div style="background:#fff;border-radius:12px;box-shadow:0 1px 8px rgba(0,0,0,0.12);padding:24px 24px 48px;display:flex;flex-direction:column;gap:24px;">
+            <label style="display:flex;flex-direction:column;gap:12px;">
+              <span style="font-size:18px;font-weight:700;color:#111;">Nome: <sup style="color:#FF0182;font-size:12px;">*</sup></span>
+              <input value="{{ nome }}" onChange="{{ onNome }}" placeholder="Digite seu nome" style="height:54px;border:2px solid #E5E5E5;border-radius:10px;padding:0 20px;font-family:inherit;font-size:16px;color:#333;outline:none;width:100%;">
+            </label>
+            <label style="display:flex;flex-direction:column;gap:12px;">
+              <span style="font-size:18px;font-weight:700;color:#111;">Seu e-mail: <sup style="color:#FF0182;font-size:12px;">*</sup></span>
+              <input value="{{ email }}" onChange="{{ onEmail }}" placeholder="Digite seu e-mail" style="height:54px;border:2px solid #E5E5E5;border-radius:10px;padding:0 20px;font-family:inherit;font-size:16px;color:#333;outline:none;width:100%;">
+            </label>
+            <label style="display:flex;flex-direction:column;gap:12px;">
+              <span style="font-size:18px;font-weight:700;color:#111;">Seu telefone: <sup style="color:#FF0182;font-size:12px;">*</sup></span>
+              <input value="{{ telefone }}" onChange="{{ onTelefone }}" inputMode="numeric" placeholder="(00) 00000-0000" style="height:54px;border:2px solid #E5E5E5;border-radius:10px;padding:0 20px;font-family:inherit;font-size:16px;color:#333;outline:none;width:100%;">
+            </label>
+            <label style="display:flex;flex-direction:column;gap:12px;">
+              <span style="font-size:18px;font-weight:700;color:#111;">Seu CPF: <sup style="color:#FF0182;font-size:12px;">*</sup></span>
+              <input value="{{ cpf }}" onChange="{{ onCpf }}" inputMode="numeric" placeholder="000.000.000-00" style="height:54px;border:2px solid #E5E5E5;border-radius:10px;padding:0 20px;font-family:inherit;font-size:16px;color:#333;outline:none;width:100%;">
+            </label>
+            <label style="display:flex;flex-direction:column;gap:12px;">
+              <span style="font-size:18px;font-weight:700;color:#111;">E sua data de nascimento: <sup style="color:#FF0182;font-size:12px;">*</sup></span>
+              <input value="{{ nasc }}" onChange="{{ onNasc }}" inputMode="numeric" placeholder="dd/mm/aaaa" style="height:54px;border:2px solid #E5E5E5;border-radius:10px;padding:0 20px;font-family:inherit;font-size:16px;color:#333;outline:none;width:100%;">
+            </label>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ isStep2 }}" hint-placeholder-val="{{ false }}">
+          <div style="background:#fff;border-radius:12px;box-shadow:0 1px 8px rgba(0,0,0,0.12);padding:24px 24px 48px;display:flex;flex-direction:column;gap:24px;">
+            <label style="display:flex;flex-direction:column;gap:12px;">
+              <span style="font-size:18px;font-weight:700;color:#111;">Qual o seu nível de educação? <sup style="color:#FF0182;font-size:12px;">*</sup></span>
+              <div style="position:relative;">
+                <select value="{{ educacao }}" onChange="{{ onEducacao }}" onBlur="{{ onEducBlur }}" style="appearance:none;-webkit-appearance:none;height:54px;width:100%;border:2px solid #E5E5E5;border-radius:10px;padding:0 44px 0 20px;background:#fff;font-family:inherit;font-size:16px;color:#333;outline:none;cursor:pointer;">
+                  <option value="">Selecione</option>
+                  <option value="ENSINO MÉDIO CURSANDO OU COMPLETO">ENSINO MÉDIO CURSANDO OU COMPLETO</option>
+                  <option value="ENSINO SUPERIOR CURSANDO OU COMPLETO">ENSINO SUPERIOR CURSANDO OU COMPLETO</option>
+                  <option value="PÓS-GRADUAÇÃO">PÓS-GRADUAÇÃO</option>
+                  <option value="MESTRADO">MESTRADO</option>
+                  <option value="DOUTORADO">DOUTORADO</option>
+                  <option value="ENSINO TÉCNICO">ENSINO TÉCNICO</option>
+                </select>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2.5" style="position:absolute;right:16px;top:20px;pointer-events:none;"><path d="M6 9l6 6 6-6"></path></svg>
+              </div>
+              <sc-if value="{{ educError }}" hint-placeholder-val="{{ false }}">
+                <span style="font-size:14px;color:#E8173C;margin-top:-4px;">Este campo é obrigatório.</span>
+              </sc-if>
+            </label>
+            <label style="display:flex;flex-direction:column;gap:12px;">
+              <span style="font-size:18px;font-weight:700;color:#111;">Possui experiência? <sup style="color:#FF0182;font-size:12px;">*</sup></span>
+              <div style="position:relative;">
+                <select value="{{ experiencia }}" onChange="{{ onExperiencia }}" onBlur="{{ onExpBlur }}" style="appearance:none;-webkit-appearance:none;height:54px;width:100%;border:2px solid #E5E5E5;border-radius:10px;padding:0 44px 0 20px;background:#fff;font-family:inherit;font-size:16px;color:#333;outline:none;cursor:pointer;">
+                  <option value="">Selecione</option>
+                  <option value="Sem experiência">Sem experiência</option>
+                  <option value="Junior (de 0 a 2 anos de experiência)">Junior (de 0 a 2 anos de experiência)</option>
+                  <option value="Pleno (de 2 a 5 anos de experiência)">Pleno (de 2 a 5 anos de experiência)</option>
+                  <option value="Sênior (acima de 5 anos de experiência)">Sênior (acima de 5 anos de experiência)</option>
+                </select>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2.5" style="position:absolute;right:16px;top:20px;pointer-events:none;"><path d="M6 9l6 6 6-6"></path></svg>
+              </div>
+              <sc-if value="{{ expError }}" hint-placeholder-val="{{ false }}">
+                <span style="font-size:14px;color:#E8173C;margin-top:-4px;">Este campo é obrigatório.</span>
+              </sc-if>
+            </label>
+            <div style="height:1px;background:#E5E5E5;margin-top:16px;"></div>
+            <span style="font-size:16px;font-weight:700;color:#222;margin-top:-8px;">Agora, precisamos do seu endereço:</span>
+            <div style="display:flex;flex-direction:column;gap:12px;margin-top:-8px;">
+              <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;">
+                <span style="font-size:18px;font-weight:700;color:#111;">CEP: <sup style="color:#FF0182;font-size:12px;">*</sup></span>
+                <a href="#" style="display:flex;align-items:center;gap:2px;font-size:16px;font-weight:500;color:#FF0182;margin-right:6px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-4-4"></path></svg>Não sei meu CEP</a>
+              </div>
+              <input value="{{ cep }}" onChange="{{ onCep }}" onBlur="{{ onCepBlur }}" inputMode="numeric" placeholder="00000-000" style="height:54px;border:2px solid #E5E5E5;border-radius:10px;padding:0 20px;font-family:inherit;font-size:16px;color:#333;outline:none;width:100%;">
+              <sc-if value="{{ cepError }}" hint-placeholder-val="{{ false }}">
+                <span style="font-size:14px;color:#E8173C;margin-top:-4px;">Este campo é obrigatório.</span>
+              </sc-if>
+              <sc-if value="{{ cepInvalid }}" hint-placeholder-val="{{ false }}">
+                <span style="font-size:14px;color:#E8173C;margin-top:-4px;">CEP não encontrado.</span>
+              </sc-if>
+            </div>
+            <sc-if value="{{ hasAddress }}" hint-placeholder-val="{{ false }}">
+              <div style="background:#F8F9FB;border:1px solid #EBEBEB;border-radius:10px;padding:16px 16px 16px 16px;display:flex;align-items:flex-start;justify-content:space-between;gap:12px;">
+                <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:6px;">
+                  <span style="font-size:14px;color:#666;">Endereço:</span>
+                  <sc-if value="{{ addrReadonly }}" hint-placeholder-val="{{ true }}">
+                    <span style="font-size:16px;color:#222;">{{ address }}</span>
+                  </sc-if>
+                  <sc-if value="{{ addrEditing }}" hint-placeholder-val="{{ false }}">
+                    <input value="{{ address }}" onChange="{{ onAddress }}" style="height:44px;border:2px solid #E5E5E5;border-radius:10px;padding:0 14px;font-family:inherit;font-size:16px;color:#333;outline:none;width:100%;background:#fff;">
+                  </sc-if>
+                </div>
+                <button onClick="{{ toggleEditAddr }}" style="background:none;border:none;padding:8px 6px 0;font-family:inherit;font-size:14px;font-weight:500;color:#FF0182;cursor:pointer;">{{ editLabel }}</button>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;">
+                <label style="display:flex;flex-direction:column;gap:12px;">
+                  <span style="font-size:18px;font-weight:700;color:#111;">Número: <sup style="color:#FF0182;font-size:12px;">*</sup></span>
+                  <input value="{{ numero }}" onChange="{{ onNumero }}" placeholder="Nº" style="height:54px;border:2px solid #E5E5E5;border-radius:10px;padding:0 20px;font-family:inherit;font-size:16px;color:#333;outline:none;width:100%;">
+                </label>
+                <label style="display:flex;flex-direction:column;gap:12px;">
+                  <span style="font-size:18px;font-weight:700;color:#111;">Complemento:</span>
+                  <input value="{{ complemento }}" onChange="{{ onComplemento }}" placeholder="Apto, Bloco..." style="height:54px;border:2px solid #E5E5E5;border-radius:10px;padding:0 20px;font-family:inherit;font-size:16px;color:#333;outline:none;width:100%;">
+                </label>
+              </div>
+            </sc-if>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ isStep3 }}" hint-placeholder-val="{{ false }}">
+          <div style="background:#fff;border-radius:12px;box-shadow:0 1px 8px rgba(0,0,0,0.12);padding:40px 24px 40px;display:flex;flex-direction:column;gap:24px;">
+            <div style="border-top:1px solid #E5E5E5;padding-top:16px;display:flex;flex-direction:column;gap:24px;">
+              <span style="font-size:20px;font-weight:700;color:#222;">Você fala mais de um idioma?</span>
+              <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;">
+                <button onClick="{{ setSim }}" style="height:60px;border-radius:10px;border:{{ simBorder }};background:{{ simBg }};font-family:inherit;font-size:16px;font-weight:500;color:#222;cursor:pointer;">Sim</button>
+                <button onClick="{{ setNao }}" style="height:60px;border-radius:10px;border:{{ naoBorder }};background:{{ naoBg }};font-family:inherit;font-size:16px;font-weight:500;color:#222;cursor:pointer;">Não</button>
+              </div>
+            </div>
+            <sc-if value="{{ isSim }}" hint-placeholder-val="{{ false }}">
+              <div style="display:flex;flex-direction:column;gap:30px;">
+                <span style="font-size:20px;font-weight:700;color:#222;">Fala pra gente quais:</span>
+                <sc-for list="{{ idiomaRows }}" as="r" hint-placeholder-count="0">
+                  <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:-12px;">
+                    <div style="position:relative;flex:1 1 200px;min-width:0;">
+                      <select value="{{ r.lang }}" onChange="{{ r.onLang }}" style="appearance:none;-webkit-appearance:none;height:54px;width:100%;border:2px solid #E5E5E5;border-radius:10px;padding:0 44px 0 20px;background:#fff;font-family:inherit;font-size:16px;color:#333;outline:none;cursor:pointer;">
+                        <option value="">Selecione</option>
+                        <option value="ITALIANO">ITALIANO</option>
+                      </select>
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2.5" style="position:absolute;right:16px;top:20px;pointer-events:none;"><path d="M6 9l6 6 6-6"></path></svg>
+                    </div>
+                    <div style="position:relative;flex:1 1 200px;min-width:0;">
+                      <select value="{{ r.nivel }}" onChange="{{ r.onNivel }}" style="appearance:none;-webkit-appearance:none;height:54px;width:100%;border:2px solid #E5E5E5;border-radius:10px;padding:0 44px 0 20px;background:#fff;font-family:inherit;font-size:16px;color:#333;outline:none;cursor:pointer;">
+                        <option value="">Selecione</option>
+                        <option value="BÁSICO">BÁSICO</option>
+                      </select>
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2.5" style="position:absolute;right:16px;top:20px;pointer-events:none;"><path d="M6 9l6 6 6-6"></path></svg>
+                    </div>
+                    <button onClick="{{ r.onRemove }}" style="background:none;border:none;padding:0 6px 0 4px;font-family:inherit;font-size:16px;color:#F00000;cursor:pointer;">Remover</button>
+                  </div>
+                </sc-for>
+                <button onClick="{{ addIdioma }}" style="height:54px;margin-top:-12px;border:2px dashed #E5E5E5;border-radius:10px;background:#fff;font-family:inherit;font-size:16px;font-weight:500;color:#FF0182;cursor:pointer;">+ Adicionar idioma</button>
+              </div>
+            </sc-if>
+            <div style="border-top:1px solid #E5E5E5;padding-top:16px;margin-top:{{ finalTop }};display:flex;flex-direction:column;gap:24px;">
+              <div style="display:flex;flex-direction:column;gap:6px;">
+                <span style="font-size:20px;font-weight:700;color:#222;">Quais horários você tem disponibilidade para trabalhar? <sup style="color:#FF0182;font-size:12px;">*</sup></span>
+                <span style="font-size:14px;color:#666;">Selecione uma ou mais opções.</span>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;">
+                <sc-for list="{{ turnos }}" as="t" hint-placeholder-count="4">
+                  <button onClick="{{ t.onClick }}" aria-pressed="{{ t.on }}" style="height:60px;border-radius:10px;border:{{ t.border }};background:{{ t.bg }};font-family:inherit;color:#222;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;">
+                    <span style="font-size:16px;font-weight:500;">{{ t.label }}</span>
+                    <span style="font-size:12px;color:#666;">{{ t.range }}</span>
+                  </button>
+                </sc-for>
+              </div>
+              
+              <sc-if value="{{ true }}" hint-placeholder-val="{{ true }}">
+                <div style="display:flex;flex-direction:column;gap:12px;">
+                  <span style="font-size:14px;color:#666;">Clique ou arraste sobre os horários de 00h às 23h59 em que você consegue trabalhar.</span>
+                  <div style="border:1px solid #EBEBEB;border-radius:10px;padding:10px;background:#fff;user-select:none;overflow-x:auto;">
+                  <div style="min-width:560px;display:grid;grid-template-columns:repeat(24,minmax(0,1fr));gap:3px;">
+                    <sc-for list="{{ horas }}" as="c" hint-placeholder-count="24">
+                      <span onMouseDown="{{ c.onDown }}" onMouseEnter="{{ c.onEnter }}" title="{{ c.title }}" style="height:40px;border-radius:6px;border:{{ c.border }};background:{{ c.bg }};color:{{ c.color }};font-size:11px;font-weight:500;display:flex;align-items:center;justify-content:center;cursor:pointer;">{{ c.label }}</span>
+                    </sc-for>
+                  </div>
+                  </div>
+                  <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;">
+                    <span style="font-size:14px;color:#666;">{{ slotCountLabel }}</span>
+                    <button onClick="{{ clearSlots }}" style="background:none;border:none;padding:0;font-family:inherit;font-size:14px;color:#F00000;cursor:pointer;">Limpar escala</button>
+                  </div>
+                </div>
+              </sc-if>
+            </div>
+            <div style="border-top:1px solid #E5E5E5;padding-top:16px;margin-top:24px;display:flex;flex-direction:column;gap:20px;">
+              <span style="font-size:20px;font-weight:700;color:#222;">Para finalizar, confirme as informações abaixo:</span>
+              <label style="display:flex;align-items:center;gap:8px;cursor:pointer;font-size:16px;color:#333;">
+                <input type="checkbox" checked="{{ pcd }}" onChange="{{ togglePcd }}" style="width:20px;height:20px;margin:0;accent-color:#FF0182;cursor:pointer;">
+                <span>Me declaro como PCD</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="1.8" style="margin-left:4px;"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v6M12 7.5v.5"></path></svg>
+              </label>
+            </div>
+          </div>
+        </sc-if>
+
+        <div style="display:flex;gap:12px;">
+          <sc-if value="{{ showBack }}" hint-placeholder-val="{{ false }}">
+            <button onClick="{{ back }}" style="flex:0 0 auto;height:48px;padding:0 32px;border-radius:100px;border:1px solid #D9D9D9;background:#fff;font-family:inherit;font-size:16px;font-weight:700;color:#222;display:flex;align-items:center;gap:6px;cursor:pointer;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4"><path d="M15 5l-7 7 7 7"></path></svg>Voltar</button>
+          </sc-if>
+          <button onClick="{{ next }}" disabled="{{ nextDisabled }}" style="flex:1 1 auto;height:46px;border-radius:100px;border:none;background:{{ nextBg }};color:{{ nextColor }};font-family:inherit;font-size:16px;font-weight:700;display:flex;align-items:center;justify-content:center;gap:6px;cursor:{{ nextCursor }};">{{ nextLabel }}<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4"><path d="M9 5l7 7-7 7"></path></svg></button>
+        </div>
+      </div>
+    </sc-if>
+  </main>
+
+  <footer style="background:#000;color:#fff;">
+    <div style="max-width:1200px;margin:0 auto;padding:96px 20px 64px;">
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:40px;padding-bottom:24px;border-bottom:1px solid #333;">
+        <div style="display:flex;flex-direction:column;gap:20px;max-width:310px;">
+          <x-import component-from-global-scope="VemSerTPDesignSystem_4017e0.Logo" height="54" color="#fff" hint-size="50px,54px"></x-import>
+          <span style="font-size:12px;line-height:1.35;color:#ddd;">Conectando talentos a oportunidades e construindo histórias de sucesso.</span>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:24px 16px;">
+          <div style="display:flex;flex-direction:column;gap:4px;font-size:12px;">
+            <span style="font-size:16px;font-weight:500;color:#fff;margin-bottom:6px;">VAGAS</span>
+            <a href="#" style="color:#ccc;">INICIANTE</a><a href="#" style="color:#ccc;">ESTUDANTE</a><a href="#" style="color:#ccc;">EXPERIENTE</a><a href="#" style="color:#ccc;">PCD</a>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:4px;font-size:12px;">
+            <span style="font-size:16px;font-weight:500;color:#fff;margin-bottom:6px;">EMPRESA</span>
+            <a href="#" style="color:#ccc;">Quem somos</a><a href="#" style="color:#ccc;">Benefícios</a><a href="#" style="color:#ccc;">Desenvolvimento</a><a href="#" style="color:#ccc;">Dúvidas frequentes</a>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:4px;font-size:12px;">
+            <span style="font-size:16px;font-weight:500;color:#fff;margin-bottom:6px;">CONTATO</span>
+            <a href="#" style="color:#ccc;">WhatsAPP</a>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:8px;padding-top:24px;font-size:12px;color:#ddd;text-align:center;">
+        <span>© 2026 TP Recrutamento. Todos os direitos reservados.</span>
+        <span><a href="#" style="color:#7C8CF0;">Política de privacidade</a> · Termos de Uso</span>
+      </div>
+    </div>
+  </footer>
+
+  <div style="position:fixed;right:0;top:50%;transform:translateY(-50%);z-index:20;display:flex;align-items:center;">
+    <sc-if value="{{ quickOpen }}" hint-placeholder-val="{{ false }}">
+      <div style="width:220px;background:#fff;border:1px solid #EBEBEB;border-right:none;border-radius:12px 0 0 12px;box-shadow:0 2px 12px rgba(0,0,0,0.1);padding:14px;display:flex;flex-direction:column;gap:8px;font-family:'Noto Sans',sans-serif;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;">
+          <span style="font-size:12px;font-weight:700;color:#333;text-transform:uppercase;letter-spacing:.025em;">Atalhos</span>
+          <button onClick="{{ toggleQuick }}" aria-label="Fechar" style="background:none;border:none;padding:2px;cursor:pointer;color:#898989;display:flex;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+        </div>
+        <span style="font-size:12px;color:#666;line-height:1.4;">Preenche os campos com dados de exemplo.</span>
+        <button onClick="{{ quickFill }}" style="height:34px;border-radius:100px;border:1px solid #FF0182;background:#fff;color:#FF0182;font-family:inherit;font-size:13px;font-weight:600;cursor:pointer;">{{ quickFillLabel }}</button>
+        <div style="height:1px;background:#EBEBEB;margin:4px 0;"></div>
+        <span style="font-size:12px;color:#666;">Ir direto para:</span>
+        <div style="display:flex;flex-direction:column;gap:4px;">
+          <sc-for list="{{ quickJumps }}" as="j" hint-placeholder-count="5">
+            <button onClick="{{ j.onClick }}" style="text-align:left;background:{{ j.bg }};border:none;border-radius:6px;padding:6px 8px;font-family:inherit;font-size:13px;color:{{ j.color }};font-weight:{{ j.weight }};cursor:pointer;" style-hover="background:#F7F7F7">{{ j.label }}</button>
+          </sc-for>
+        </div>
+      </div>
+    </sc-if>
+    <sc-if value="{{ quickClosed }}" hint-placeholder-val="{{ true }}">
+      <button onClick="{{ toggleQuick }}" aria-label="Atalhos de preenchimento" title="Atalhos de preenchimento" style="width:32px;padding:14px 0;border:none;border-radius:10px 0 0 10px;background:#FF0182;box-shadow:0 2px 8px rgba(0,0,0,0.2);color:#fff;display:flex;flex-direction:column;align-items:center;gap:8px;cursor:pointer;font-family:'Noto Sans',sans-serif;" style-hover="background:#E40276">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 5l-7 7 7 7M19 5l-7 7 7 7"></path></svg>
+        <span style="writing-mode:vertical-rl;transform:rotate(180deg);font-size:12px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;">Atalhos</span>
+      </button>
+    </sc-if>
+  </div>
+
+  <div style="position:fixed;left:0;bottom:24px;z-index:5;display:flex;flex-direction:column;gap:38px;">
+    <button aria-label="Cookies" style="width:40px;height:64px;border:none;border-radius:0 10px 10px 0;background:#fff;box-shadow:0 1px 6px rgba(0,0,0,0.2);display:flex;align-items:center;justify-content:center;cursor:pointer;">
+      <svg width="28" height="28" viewBox="0 0 24 24"><path fill="#000" d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5z"></path><circle cx="8" cy="9" r="1.5" fill="#fff"></circle><circle cx="15" cy="15" r="1.5" fill="#fff"></circle><circle cx="9" cy="16" r="1.5" fill="#fff"></circle><circle cx="12" cy="12" r="1" fill="#fff"></circle></svg>
+    </button>
+    <button aria-label="WhatsApp" style="width:40px;height:80px;border:none;border-radius:0 10px 10px 0;background:#fff;box-shadow:0 1px 6px rgba(0,0,0,0.2);display:flex;align-items:center;justify-content:center;cursor:pointer;">
+      <svg width="28" height="28" viewBox="0 0 32 32"><circle cx="16" cy="16" r="13" fill="#25D366"></circle><path fill="#fff" d="M16 7.5a8.5 8.5 0 0 0-7.3 12.8L7.5 24.5l4.3-1.1A8.5 8.5 0 1 0 16 7.5zm4.8 11.9c-.2.6-1.2 1.1-1.7 1.2-.4.1-1 .1-1.6-.1-3-1-4.9-3.9-5.1-4.1-.1-.2-1.2-1.6-1.2-3s.8-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.4.6c-.1.1-.3.3-.1.6.2.3.7 1.2 1.6 1.9 1.1.9 1.9 1.2 2.2 1.3.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.4.2.5.3.1.2.1.7-.1 1.3z"></path></svg>
+    </button>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;tela&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;home&quot;,&quot;options&quot;:[&quot;home&quot;,&quot;termos&quot;,&quot;etapa1&quot;,&quot;etapa2&quot;,&quot;etapa2-endereco&quot;,&quot;etapa3-nao&quot;,&quot;etapa3-sim&quot;,&quot;etapa3-idioma&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Navegação&quot;}}">
+const GRAD = 'linear-gradient(90deg, #FF0182 0%, #7A2180 100%)';
+const onlyDigits = v => (v || '').replace(/\D/g, '');
+const maskPhone = v => { const d = onlyDigits(v).slice(0, 11); if (!d) return ''; if (d.length <= 2) return '(' + d; if (d.length <= 7) return '(' + d.slice(0,2) + ') ' + d.slice(2); return '(' + d.slice(0,2) + ') ' + d.slice(2,7) + '-' + d.slice(7); };
+const maskCpf = v => { const d = onlyDigits(v).slice(0, 11); return d.replace(/(\d{3})(\d)/, '$1.$2').replace(/(\d{3})(\d)/, '$1.$2').replace(/(\d{3})(\d{1,2})$/, '$1-$2'); };
+const maskDate = v => { const d = onlyDigits(v).slice(0, 8); return d.replace(/(\d{2})(\d)/, '$1/$2').replace(/(\d{2})(\d)/, '$1/$2'); };
+const maskCep = v => { const d = onlyDigits(v).slice(0, 8); return d.replace(/(\d{5})(\d)/, '$1-$2'); };
+const HORAS = Array.from({ length: 24 }, (_, i) => i);
+const hh = h => String(h).padStart(2, '0');
+const PERIODOS = [
+  { label: 'Manhã', range: '06h às 12h', hours: [6, 7, 8, 9, 10, 11] },
+  { label: 'Tarde', range: '12h às 18h', hours: [12, 13, 14, 15, 16, 17] },
+  { label: 'Noite', range: '18h às 23h59', hours: [18, 19, 20, 21, 22, 23] },
+  { label: 'Madrugada', range: '00h às 06h', hours: [0, 1, 2, 3, 4, 5] },
+];
+const key = h => 'h' + h;
+const VAGAS_HOME = [
+  [
+    { nome: 'Agente de atendimento - Operadora de telefonia', modalidade: 'Presencial', local: 'São Paulo - SP', descricao: 'Atenda clientes por telefone e chat, resolva dúvidas sobre planos e faturas e garanta uma boa experiência do início ao fim. Treinamento completo pago.', escala: 'Escala 6x1 · 6h20 diárias' },
+    { nome: 'Agente de vendas receptivo - Seguros', modalidade: 'Remoto', local: 'Todo o Brasil', descricao: 'Receba ligações de clientes interessados, apresente coberturas e conclua vendas com metas claras e comissão. Equipamento fornecido pela TP.', escala: 'Escala 5x2 · 6h20 diárias' },
+    { nome: 'Agente de suporte - Aplicativo de delivery', modalidade: 'Híbrido', local: 'Recife - PE', descricao: 'Ajude entregadores e restaurantes parceiros por chat e e-mail, acompanhando pedidos e resolvendo ocorrências em tempo real.', escala: 'Escala 6x1 · 6h20 diárias' },
+  ],
+  [
+    { nome: 'Estágio em atendimento - Banco digital', modalidade: 'Presencial', local: 'São Paulo - SP', descricao: 'Concilie estudo e trabalho apoiando o time de relacionamento com clientes. Para estudantes de nível superior a partir do 1º semestre.', escala: 'Escala 5x2 · 6h diárias' },
+    { nome: 'Jovem Aprendiz - Backoffice', modalidade: 'Presencial', local: 'Fortaleza - CE', descricao: 'Aprenda rotinas administrativas e de análise de cadastros com acompanhamento de um padrinho e trilha de formação TP.', escala: 'Escala 5x2 · 4h diárias' },
+    { nome: 'Estágio em dados - Operações', modalidade: 'Híbrido', local: 'Rio de Janeiro - RJ', descricao: 'Apoie a construção de relatórios e indicadores das operações. Desejável conhecimento em Excel e interesse por análise de dados.', escala: 'Escala 5x2 · 6h diárias' },
+  ],
+  [
+    { nome: 'Supervisor de atendimento - E-commerce', modalidade: 'Presencial', local: 'São Paulo - SP', descricao: 'Lidere uma equipe de agentes, acompanhe indicadores de qualidade e produtividade e desenvolva pessoas com feedbacks frequentes.', escala: 'Escala 5x2 · 8h48 diárias' },
+    { nome: 'Agente bilíngue inglês - Suporte técnico', modalidade: 'Remoto', local: 'Todo o Brasil', descricao: 'Atenda clientes internacionais em inglês, diagnosticando problemas de software e orientando soluções passo a passo.', escala: 'Escala 5x2 · 6h20 diárias' },
+    { nome: 'Analista de qualidade - Atendimento', modalidade: 'Híbrido', local: 'Curitiba - PR', descricao: 'Monitore interações, aplique checklists de qualidade e proponha planos de ação junto à supervisão para elevar a satisfação dos clientes.', escala: 'Escala 5x2 · 8h48 diárias' },
+  ],
+  [
+    { nome: 'Agente de atendimento - Varejo', modalidade: 'Presencial', local: 'São Paulo - SP', descricao: 'Atenda clientes por telefone e chat com estrutura acessível, intérprete de Libras disponível e acompanhamento do time de inclusão.', escala: 'Escala 6x1 · 6h20 diárias', isPcd: true },
+    { nome: 'Agente de chat - Serviços financeiros', modalidade: 'Remoto', local: 'Todo o Brasil', descricao: 'Atendimento exclusivamente por texto, com ferramentas compatíveis com leitores de tela e suporte da TP na adaptação do posto de trabalho.', escala: 'Escala 5x2 · 6h20 diárias', isPcd: true },
+    { nome: 'Assistente administrativo - Backoffice', modalidade: 'Híbrido', local: 'Belo Horizonte - MG', descricao: 'Organize cadastros, valide documentos e apoie rotinas internas em um ambiente adaptado e com escuta ativa para suas necessidades.', escala: 'Escala 5x2 · 6h diárias', isPcd: true },
+  ],
+];
+const MOD_COLOR = { Presencial: '#7a2180', Remoto: '#ff0082', 'Híbrido': '#23B33A' };
+const PRESET_EMAIL = 'henrique.biancardine@innolevels.com.br';
+
+function preset(tela) {
+  const base = { screen: 'landing', contactMode: 'email', contact: '', email: PRESET_EMAIL, nome: '', telefone: '', cpf: '', nasc: '', educacao: '', experiencia: '', cep: '', cepTouched: false, educTouched: false, expTouched: false, address: '', addrEditing: false, cepNotFound: false, numero: '', complemento: '', slots: {}, escalaOpen: false, quickOpen: false, idiomaResp: null, idiomas: [], pcd: false, tab: 0 };
+  const filled = { educacao: 'ENSINO SUPERIOR CURSANDO OU COMPLETO', experiencia: 'Sênior (acima de 5 anos de experiência)' };
+  switch (tela) {
+    case 'termos': return { ...base, screen: 'terms' };
+    case 'etapa1': return { ...base, screen: 'step1' };
+    case 'etapa2': return { ...base, ...filled, screen: 'step2', cepTouched: true };
+    case 'etapa2-endereco': return { ...base, educacao: filled.educacao, screen: 'step2', expTouched: true, cep: '22790-685', address: 'Rua Rivadavia Campos, Recreio dos Bandeirantes - Rio de Janeiro/RJ' };
+    case 'etapa3-nao': return { ...base, ...filled, screen: 'step3', idiomaResp: 'nao' };
+    case 'etapa3-sim': return { ...base, ...filled, screen: 'step3', idiomaResp: 'sim' };
+    case 'etapa3-idioma': return { ...base, ...filled, screen: 'step3', idiomaResp: 'sim', idiomas: [{ lang: 'ITALIANO', nivel: 'BÁSICO' }] };
+    default: return base;
+  }
+}
+
+class Component extends DCLogic {
+  state = preset(this.props.tela ?? 'home');
+  componentDidUpdate(prev) { if (prev.tela !== this.props.tela) { this.setState(preset(this.props.tela)); window.scrollTo(0, 0); } }
+  go(screen) { this.setState({ screen }); window.scrollTo(0, 0); }
+  async lookupCep(cep) {
+    const d = onlyDigits(cep);
+    if (d.length !== 8) { this.setState({ address: '', cepNotFound: false, addrEditing: false }); return; }
+    try {
+      const r = await fetch('https://viacep.com.br/ws/' + d + '/json/');
+      const j = await r.json();
+      if (onlyDigits(this.state.cep) !== d) return;
+      if (j.erro) { this.setState({ address: '', cepNotFound: true }); return; }
+      const addr = [j.logradouro, j.bairro].filter(Boolean).join(', ') + ' - ' + j.localidade + '/' + j.uf;
+      this.setState({ address: addr, cepNotFound: false, addrEditing: false });
+    } catch (e) { this.setState({ address: '', cepNotFound: false, addrEditing: true }); }
+  }
+  componentDidMount() { this._up = () => { this.drag = null; }; window.addEventListener('mouseup', this._up); }
+  componentWillUnmount() { window.removeEventListener('mouseup', this._up); }
+  setCells(keys, on) { this.setState(st => { const slots = { ...st.slots }; keys.forEach(k => { if (on) slots[k] = true; else delete slots[k]; }); return { slots }; }); }
+  toggleGroup(keys) { const all = keys.every(k => this.state.slots[k]); this.setCells(keys, !all); }
+  fillData(step) {
+    if (step === 1) return { nome: 'Henrique Biancardine', email: this.state.email || PRESET_EMAIL, telefone: '(21) 99876-5432', cpf: '123.456.789-09', nasc: '15/04/1995' };
+    if (step === 2) return { educacao: 'ENSINO SUPERIOR CURSANDO OU COMPLETO', experiencia: 'Pleno (de 2 a 5 anos de experiência)', cep: '22790-685', address: 'Rua Rivadavia Campos, Recreio dos Bandeirantes - Rio de Janeiro/RJ', numero: '120', complemento: '', cepTouched: false, cepNotFound: false, addrEditing: false };
+    if (step === 3) { const slots = {}; for (let h = 6; h < 18; h++) slots['h' + h] = true; return { idiomaResp: 'nao', idiomas: [], slots }; }
+    return {};
+  }
+  jumpTo(step) {
+    const patch = {};
+    for (let i = 1; i < step; i++) Object.assign(patch, this.fillData(i));
+    this.setState({ ...patch, screen: step === 0 ? 'landing' : step === -1 ? 'terms' : 'step' + step });
+    window.scrollTo(0, 0);
+  }
+  setIdioma(i, patch) { this.setState(s => ({ idiomas: s.idiomas.map((r, j) => j === i ? { ...r, ...patch } : r) })); }
+
+  renderVals() {
+    const s = this.state;
+    const step = s.screen === 'step1' ? 1 : s.screen === 'step2' ? 2 : s.screen === 'step3' ? 3 : 0;
+    const step1Ok = s.nome.trim() && /\S+@\S+\.\S+/.test(s.email) && onlyDigits(s.telefone).length >= 10 && onlyDigits(s.cpf).length === 11 && onlyDigits(s.nasc).length === 8;
+    const step2Ok = s.educacao && s.experiencia && onlyDigits(s.cep).length === 8 && s.address.trim() && s.numero.trim();
+    const step3Ok = !!s.idiomaResp && Object.keys(s.slots).length > 0;
+    const ok = step === 1 ? step1Ok : step === 2 ? step2Ok : step3Ok;
+    const sel = { border: '2px solid #FF0182', bg: '#FFF0F6' }, unsel = { border: '2px solid #E5E5E5', bg: '#fff' };
+    const tabSel = { border: '1px solid #FF0182', bg: '#FDE7F2', color: '#FF0182' }, tabUn = { border: '1px solid #fff', bg: '#fff', color: '#333' };
+    const em = s.contactMode === 'email' ? tabSel : tabUn, sm = s.contactMode === 'sms' ? tabSel : tabUn;
+    const simS = s.idiomaResp === 'sim' ? sel : unsel, naoS = s.idiomaResp === 'nao' ? sel : unsel;
+    const tabLabels = ['INICIANTE', 'ESTUDANTE', 'EXPERIENTE', 'PCD'];
+
+    return {
+      isLanding: s.screen === 'landing', notLanding: s.screen !== 'landing',
+      isTerms: s.screen === 'terms', isStep: step > 0,
+      isStep1: step === 1, isStep2: step === 2, isStep3: step === 3,
+      step, stepLabel: '0' + (step + 2) + ' Etapa ' + step,
+      bars: [1, 2, 3].map(n => ({ bg: n <= step ? GRAD : '#E5E5E5' })),
+      goLanding: () => this.go('landing'),
+
+      setEmailMode: () => this.setState({ contactMode: 'email', contact: '' }),
+      setSmsMode: () => this.setState({ contactMode: 'sms', contact: '' }),
+      emailTabBorder: em.border, emailTabBg: em.bg, emailTabColor: em.color,
+      smsTabBorder: sm.border, smsTabBg: sm.bg, smsTabColor: sm.color,
+      contact: s.contact,
+      contactPlaceholder: s.contactMode === 'email' ? 'Digite seu e-mail' : 'Digite seu telefone',
+      onContact: e => this.setState({ contact: s.contactMode === 'sms' ? maskPhone(e.target.value) : e.target.value }),
+      openTerms: () => this.setState(st => ({ screen: 'terms', email: st.contactMode === 'email' && st.contact ? st.contact : st.email, telefone: st.contactMode === 'sms' && st.contact ? st.contact : st.telefone })),
+      tabs: tabLabels.map((label, i) => ({ label, color: i === s.tab ? '#ff0082' : '#6b7280', underline: i === s.tab ? '2px solid #ff0082' : '2px solid transparent', onClick: () => this.setState({ tab: i }) })),
+      vagas: VAGAS_HOME[s.tab].map(v => ({ ...v, isPcd: !!v.isPcd, modColor: MOD_COLOR[v.modalidade] })),
+
+      toc: [
+        { t: 'Nossas regras corporativas vinculativas', p: '1' },
+        { t: 'Finalidade do processamento de suas informações pessoais', p: '2' },
+        { t: 'As informações pessoais que coletamos de você', p: '2' },
+        { t: 'Como processamos suas informações pessoais', p: '2' },
+        { t: 'Uso remoto de câmeras durante o processo de recrutamento', p: '3' },
+        { t: 'Retenção de suas informações pessoais', p: '3' },
+        { t: 'Seus direitos de privacidade', p: '3' },
+        { t: 'Detalhes de contato e links', p: '4' },
+      ],
+      acceptTerms: () => this.go('step1'),
+
+      nome: s.nome, email: s.email, telefone: s.telefone, cpf: s.cpf, nasc: s.nasc,
+      onNome: e => this.setState({ nome: e.target.value }),
+      onEmail: e => this.setState({ email: e.target.value }),
+      onTelefone: e => this.setState({ telefone: maskPhone(e.target.value) }),
+      onCpf: e => this.setState({ cpf: maskCpf(e.target.value) }),
+      onNasc: e => this.setState({ nasc: maskDate(e.target.value) }),
+
+      educacao: s.educacao, experiencia: s.experiencia, cep: s.cep,
+      onEducacao: e => this.setState({ educacao: e.target.value }),
+      onExperiencia: e => this.setState({ experiencia: e.target.value }),
+      onCep: e => { const cep = maskCep(e.target.value); this.setState({ cep }); this.lookupCep(cep); },
+      onEducBlur: () => this.setState({ educTouched: true }),
+      onExpBlur: () => this.setState({ expTouched: true }),
+      educError: s.educTouched && !s.educacao, expError: s.expTouched && !s.experiencia,
+      cepInvalid: s.cepNotFound,
+      hasAddress: onlyDigits(s.cep).length === 8 && (!!s.address || s.addrEditing),
+      address: s.address, addrEditing: s.addrEditing, addrReadonly: !s.addrEditing,
+      editLabel: s.addrEditing ? 'Salvar' : 'Editar',
+      toggleEditAddr: () => this.setState(st => ({ addrEditing: !st.addrEditing })),
+      onAddress: e => this.setState({ address: e.target.value }),
+      numero: s.numero, complemento: s.complemento,
+      onNumero: e => this.setState({ numero: e.target.value }),
+      onComplemento: e => this.setState({ complemento: e.target.value }),
+      onCepBlur: () => this.setState({ cepTouched: true }),
+      cepError: s.cepTouched && !s.cep,
+
+      setSim: () => this.setState({ idiomaResp: 'sim' }),
+      setNao: () => this.setState({ idiomaResp: 'nao' }),
+      simBorder: simS.border, simBg: simS.bg, naoBorder: naoS.border, naoBg: naoS.bg,
+      isSim: s.idiomaResp === 'sim',
+      finalTop: s.idiomaResp === 'sim' ? '0px' : '24px',
+      idiomaRows: s.idiomas.map((r, i) => ({ lang: r.lang, nivel: r.nivel,
+        onLang: e => this.setIdioma(i, { lang: e.target.value }),
+        onNivel: e => this.setIdioma(i, { nivel: e.target.value }),
+        onRemove: () => this.setState(st => ({ idiomas: st.idiomas.filter((_, j) => j !== i) })) })),
+      addIdioma: () => this.setState(st => ({ idiomas: [...st.idiomas, { lang: '', nivel: '' }] })),
+      turnos: PERIODOS.map(p => {
+        const keys = p.hours.map(key);
+        const n = keys.filter(k => s.slots[k]).length;
+        const st = n === keys.length ? { border: sel.border, bg: sel.bg } : n > 0 ? { border: '2px dashed #FF0182', bg: '#fff' } : unsel;
+        return { label: p.label, range: n > 0 && n < keys.length ? 'Parcial · ' + p.range : p.range, on: n === keys.length, border: st.border, bg: st.bg, onClick: () => this.toggleGroup(keys) };
+      }),
+      escalaOpen: s.escalaOpen,
+      escalaLabel: s.escalaOpen ? 'Ocultar escala de horários' : 'Montar minha escala de horários',
+      toggleEscala: () => this.setState(st => ({ escalaOpen: !st.escalaOpen })),
+      horas: HORAS.map(h => { const k = key(h), on = !!s.slots[k]; return {
+        label: hh(h), title: hh(h) + ':00 às ' + (h === 23 ? '23:59' : hh(h + 1) + ':00'),
+        border: on ? '1px solid #FF0182' : '1px solid #E5E5E5', bg: on ? '#FF0182' : '#fff', color: on ? '#fff' : '#333',
+        onDown: e => { e.preventDefault(); this.drag = !on; this.setCells([k], !on); },
+        onEnter: () => { if (this.drag !== null && this.drag !== undefined) this.setCells([k], this.drag); },
+      }; }),
+      slotCountLabel: (() => { const n = Object.keys(s.slots).length; return n === 0 ? 'Nenhum horário selecionado' : n + (n === 1 ? ' hora selecionada' : ' horas selecionadas'); })(),
+      clearSlots: () => this.setState({ slots: {} }),
+      quickOpen: s.quickOpen, quickClosed: !s.quickOpen,
+      toggleQuick: () => this.setState(st => ({ quickOpen: !st.quickOpen })),
+      quickFillLabel: step > 0 ? 'Preencher etapa ' + step : 'Preencher todo o cadastro',
+      quickFill: () => { if (step > 0) this.setState(this.fillData(step)); else this.jumpTo(3) || this.setState(this.fillData(3)); },
+      quickJumps: [['Home', 0], ['Termos de privacidade', -1], ['Etapa 1 de 3', 1], ['Etapa 2 de 3', 2], ['Etapa 3 de 3', 3]].map(([label, n]) => {
+        const cur = (n === 0 && s.screen === 'landing') || (n === -1 && s.screen === 'terms') || (n > 0 && step === n);
+        return { label, bg: cur ? '#FFF0F6' : 'transparent', color: cur ? '#FF0182' : '#333', weight: cur ? '600' : '400', onClick: () => this.jumpTo(n) };
+      }),
+      pcd: s.pcd, togglePcd: () => this.setState(st => ({ pcd: !st.pcd })),
+
+      showBack: step > 1,
+      back: () => this.go(step === 3 ? 'step2' : 'step1'),
+      next: () => { if (!ok) return; if (step === 1) this.go('step2'); else if (step === 2) this.go('step3'); else this.go('landing'); },
+      nextDisabled: !ok,
+      nextLabel: step === 3 ? 'Ver vagas' : 'Próxima',
+      nextBg: ok ? GRAD : '#D9D9D9', nextColor: ok ? '#fff' : '#9AA0AB', nextCursor: ok ? 'pointer' : 'not-allowed',
+    };
+  }
+}
+</script>
+</body>
+</html>

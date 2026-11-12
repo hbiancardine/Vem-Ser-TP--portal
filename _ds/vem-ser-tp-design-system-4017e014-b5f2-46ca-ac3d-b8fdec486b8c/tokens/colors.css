@@ -1,0 +1,77 @@
+/* ============================================================
+   Vem ser TP — Color tokens
+   Derived from the "Vem ser TP" Figma recruitment portal.
+   ============================================================ */
+:root {
+  /* ---- Brand: Magenta (primary) ---- */
+  --tp-magenta:        #FF0182;  /* rgb(255,1,130) — primary brand accent */
+  --tp-magenta-600:    #E40276;  /* rgb(228,2,118) — pressed / deeper */
+  --tp-magenta-700:    #C20264;  /* hover-dark derived */
+  --tp-magenta-050:    #FFE6F2;  /* tint surface */
+
+  /* ---- Brand: Purple ---- */
+  --tp-purple:         #7A2180;  /* rgb(122,33,128) — secondary brand */
+  --tp-purple-600:     #780096;  /* rgb(120,0,150) — deep violet */
+  --tp-purple-500:     #8D27A6;  /* rgb(141,39,166) */
+  --tp-purple-050:     #F3E8F5;  /* tint surface */
+
+  /* ---- Semantic: Success (green) ---- */
+  --tp-green:          #57D163;  /* rgb(87,209,99) */
+  --tp-green-600:      #23B33A;  /* rgb(35,179,58) — deeper */
+  --tp-green-050:      #E7F8E9;
+
+  /* ---- Accent blue (used in a few illustrative states) ---- */
+  --tp-blue:           #7CB4F9;  /* rgb(124,180,249) */
+  --tp-blue-600:       #6DA2E4;  /* rgb(109,162,228) */
+
+  /* ---- Neutrals / ink ---- */
+  --tp-black:          #000000;
+  --tp-ink:            #181818;
+  --tp-gray-900:       #333333;  /* rgb(51,51,51) */
+  --tp-gray-800:       #404040;  /* rgb(64,64,64) — primary body text */
+  --tp-gray-700:       #4C4C4C;  /* rgb(76,76,76) */
+  --tp-gray-600:       #666666;  /* rgb(102,102,102) */
+  --tp-gray-500:       #898989;
+  --tp-gray-400:       #AEAEAE;  /* rgb(174,174,174) — placeholder / labels */
+  --tp-gray-350:       #B2B2B2;  /* rgb(178,178,178) — input borders */
+  --tp-gray-300:       #C4C4C4;  /* rgb(196,196,196) */
+  --tp-gray-250:       #D9D9D9;  /* rgb(217,217,217) — dividers, tracks */
+  --tp-gray-200:       #E5E5E5;  /* rgb(235,235,235) — soft fill */
+  --tp-gray-150:       #EBEBEB;  /* filled-input background */
+  --tp-gray-100:       #F8F8F8;  /* rgb(248,248,248) — card-soft */
+  --tp-gray-050:       #F7F7F7;  /* rgb(247,247,247) — page background */
+  --tp-white:          #FFFFFF;
+
+  /* ---- Shadow ink (alpha black) ---- */
+  --tp-shadow-04:      rgba(0,0,0,0.04);
+  --tp-shadow-06:      rgba(0,0,0,0.06);
+  --tp-shadow-25:      rgba(0,0,0,0.25);
+
+  /* ============ Semantic aliases ============ */
+  --color-bg:              var(--tp-gray-050);
+  --color-surface:         var(--tp-white);
+  --color-surface-soft:    var(--tp-gray-100);
+  --color-surface-filled:  var(--tp-gray-150);
+  --color-surface-invert:  var(--tp-black);
+
+  --color-text:            var(--tp-gray-800);
+  --color-text-strong:     var(--tp-black);
+  --color-text-muted:      var(--tp-gray-600);
+  --color-text-faint:      var(--tp-gray-400);
+  --color-text-invert:     var(--tp-white);
+  --color-text-link:       var(--tp-magenta);
+
+  --color-primary:         var(--tp-magenta);
+  --color-primary-press:   var(--tp-magenta-600);
+  --color-secondary:       var(--tp-purple);
+  --color-success:         var(--tp-green-600);
+
+  --color-border:          var(--tp-gray-350);
+  --color-border-soft:     var(--tp-gray-250);
+  --color-divider:         var(--tp-gray-250);
+
+  /* Tag/pill accent pairings (outline style) */
+  --tag-presencial:        var(--tp-purple);
+  --tag-remoto:            var(--tp-magenta);
+  --tag-hibrido:           var(--tp-green-600);
+}
